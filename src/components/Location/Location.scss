@@ -1,0 +1,30 @@
+.location {
+  text-align: center;
+  padding: 0.5rem;
+  border: 1px solid #7f8c8d;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  min-width: 200px;
+  min-height: 200px;
+  background-color: #ecf0f1;
+  &:last-child {
+    margin-bottom: unset;
+  }
+  &__name {
+    font-size: 1.5rem;
+  }
+  &__number {
+    font-size: 1.5rem;
+  }
+  &__characters {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__character {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid #7f8c8d;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+}

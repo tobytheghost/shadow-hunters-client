@@ -1,0 +1,27 @@
+.deck {
+  flex: 1;
+  border-radius: 10px;
+  border: 1px solid #000;
+  text-align: center;
+  padding: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  flex-direction: column;
+  &:first-child {
+    margin-left: unset;
+  }
+  &:last-child {
+    margin-right: unset;
+  }
+  &--green {
+    background: #2ecc71;
+    color: #fff;
+  }
+  &--black {
+    background: #34495e;
+    color: #fff;
+  }
+  &--white {
+    background: #ecf0f1;
+  }
+}

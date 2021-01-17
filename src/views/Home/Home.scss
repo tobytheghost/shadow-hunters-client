@@ -1,0 +1,11 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-content: center;
+  height: 100vh;
+  &__title {
+    font-size: 4rem;
+    padding: 1rem;
+  }
+}

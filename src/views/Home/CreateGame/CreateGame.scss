@@ -1,0 +1,54 @@
+.create {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  &__title {
+    position: relative;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    &:before {
+      content: "";
+      border-bottom: 2px solid #34495e;
+      width: 50%;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+    }
+    &:after {
+      content: "";
+      border-bottom: 2px solid #34495e;
+      width: 50%;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+    }
+  }
+  &__input-title {
+    display: block;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  &__input {
+    width: 100%;
+    font-size: 1.75rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #7f8c8d;
+    background-color: #ecf0f1;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  &__button {
+    margin: 0 auto;
+    padding: 5px 15px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #7f8c8d;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,52 @@
+.player {
+  //border: 1px solid #7f8c8d;
+  background-color: #ecf0f1;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  &:last-child {
+    margin-right: unset;
+  }
+  &--red {
+    background: #e74c3c;
+    color: #fff;
+    border: 1px solid #e74c3c;
+  }
+  &--green {
+    background: #2ecc71;
+    color: #fff;
+    border: 1px solid #2ecc71;
+  }
+  &--blue {
+    background: #3498db;
+    color: #fff;
+    border: 1px solid #3498db;
+  }
+  &--purple {
+    background: #9b59b6;
+    color: #fff;
+    border: 1px solid #9b59b6;
+  }
+  &--black {
+    background: #34495e;
+    color: #fff;
+    border: 1px solid #34495e;
+  }
+  &--yellow {
+    background: #f1c40f;
+    border: 1px solid #f1c40f;
+  }
+  &--orange {
+    background: #e67e22;
+    border: 1px solid #e67e22;
+  }
+  &--white {
+    background: #ecf0f1;
+    border: 1px solid #34495e;
+  }
+  &__name {
+    margin-bottom: 0.5rem;
+  }
+}

@@ -4,12 +4,13 @@ import CardPreview from "../../components/CardPreview/CardPreview";
 import Deck from "../../components/Deck/Deck";
 import Players from "../../components/Players/Players";
 import { useGameState } from "../../context/GameStateProvider";
+import Actions from "../../components/Actions/Actions";
 import Board from "../Board/Board";
 
 import "./Game.scss";
 
 const Game = () => {
-  const [{ preview }, gameDispatch] = useGameState();
+  const [{ preview }] = useGameState();
 
   return (
     <div className="game">
@@ -30,6 +31,7 @@ const Game = () => {
         </div>
         <hr />
         <div className="subtitle">Actions: </div>
+        <Actions />
       </div>
     </div>
   );

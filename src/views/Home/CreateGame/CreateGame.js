@@ -1,22 +1,28 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { useGlobalState } from "../../../context/GlobalStateProvider";
 
 import "./CreateGame.scss";
 
 const CreateGame = () => {
-  const [players, setPlayers] = useState();
-  const [name, setName] = useState();
+  const [{ socket }] = useGlobalState();
+  const history = useHistory();
+  //const [players, setPlayers] = useState();
+  const [name, setName] = useState("");
+
+  const handleCreateNewGame = () => {
+    console.log("here");
+    socket.emit("hostCreateNewGame");
+  };
+
+  socket.on("newGameCreated", (data) => {
+    console.log(data);
+    history.push(`/lobby/${data.gameId}`);
+  });
 
   return (
     <div className="create">
       <h2 className="create__title">Create Game</h2>
-      {/* <label>
-        <span className="create__input-title">Players</span>
-        <input
-          className="create__input create__input--players"
-          value={players}
-          onChange={(e) => setPlayers(e.target.value)}
-        />
-      </label> */}
       <label>
         <span className="create__input-title">Name</span>
         <input
@@ -25,7 +31,9 @@ const CreateGame = () => {
           onChange={(e) => setName(e.target.value)}
         />
       </label>
-      <button className="create__button">Create</button>
+      <button className="create__button" onClick={handleCreateNewGame}>
+        Create
+      </button>
     </div>
   );
 };

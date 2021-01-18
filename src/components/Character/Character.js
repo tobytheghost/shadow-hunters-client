@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import { gameActionTypes } from "../../context/GameReducer";
 import { useGameState } from "../../context/GameStateProvider";
 
 import "./Character.scss";
 
 const Character = ({ character }) => {
+  const [, gameDispatch] = useGameState();
+
+  const handleOnMouseEnter = () => {
+    gameDispatch({
+      type: gameActionTypes.SET_PREVIEW,
+      payload: {
+        preview: character,
+      },
+    });
+  };
+
   if (!character) {
     return (
       <div className="character">
@@ -17,17 +28,6 @@ const Character = ({ character }) => {
       </div>
     );
   }
-
-  const [{}, gameDispatch] = useGameState();
-
-  const handleOnMouseEnter = () => {
-    gameDispatch({
-      type: gameActionTypes.SET_PREVIEW,
-      payload: {
-        preview: character,
-      },
-    });
-  };
 
   return (
     <div

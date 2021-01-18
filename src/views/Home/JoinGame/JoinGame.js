@@ -1,10 +1,20 @@
 import React, { useState } from "react";
+import { useGlobalState } from "../../../context/GlobalStateProvider";
 
 import "./JoinGame.scss";
 
 const JoinGame = () => {
-  const [roomId, setRoomId] = useState();
-  const [name, setName] = useState();
+  const [{ socket }] = useGlobalState();
+  const [roomId, setRoomId] = useState("");
+  const [name, setName] = useState("");
+
+  const handleJoinGame = () => {
+    const data = {
+      gameId: roomId,
+      playerName: name,
+    };
+    socket.emit("playerJoinGame", data);
+  };
 
   return (
     <div className="join">
@@ -25,7 +35,9 @@ const JoinGame = () => {
           onChange={(e) => setName(e.target.value)}
         />
       </label>
-      <button className="join__button">Join</button>
+      <button className="join__button" onClick={() => handleJoinGame()}>
+        Join
+      </button>
     </div>
   );
 };
